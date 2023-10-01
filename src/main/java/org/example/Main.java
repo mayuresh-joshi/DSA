@@ -14,6 +14,6 @@ public class Main {
         newBinaryTree.printTree();
         System.out.println("=======================");
         newBinaryTree.printTreeDepthFirst();
-
+        System.out.println("=======================");
     }
 }
