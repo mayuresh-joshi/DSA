@@ -1,13 +1,19 @@
 package org.example;
 
+import org.example.nodes.BinaryTreeNode;
 import org.example.trees.BinaryTree;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
         BinaryTree newBinaryTree = new BinaryTree();
+        System.out.println("=======================");
+        for (int i = 2; i <= 15; i++) {
+            newBinaryTree.addNode(new BinaryTreeNode(i, null, null));
+        }
+        System.out.println("=======================");
         newBinaryTree.printTree();
-        newBinaryTree.deleteSubTree(2);
-        newBinaryTree.printTree();
+        System.out.println("=======================");
+        newBinaryTree.printTreeDepthFirst();
+
     }
 }
