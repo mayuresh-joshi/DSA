@@ -7,7 +7,8 @@ import java.util.Stack;
 
 public class BinaryTree {
 
-    BinaryTreeNode rootNode = null;
+    private BinaryTreeNode rootNode = null;
+
     public BinaryTree() {
         BinaryTreeNode tempRootNode = null;
         //tempRootNode = new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(4, null, null), null), new BinaryTreeNode(3, new BinaryTreeNode(6, null, null), null));
@@ -17,7 +18,7 @@ public class BinaryTree {
 
     public void printTree() {
 
-        if(rootNode == null){
+        if (rootNode == null) {
             System.out.println("Tree is empty");
             return;
         }
@@ -29,11 +30,11 @@ public class BinaryTree {
             list.removeFirst();
             System.out.println(current.getNodeId());
 
-            if(current.getLeftNode() != null){
+            if (current.getLeftNode() != null) {
                 list.add(current.getLeftNode());
             }
 
-            if(current.getRightNode() != null){
+            if (current.getRightNode() != null) {
                 list.add(current.getRightNode());
             }
         }
@@ -41,7 +42,7 @@ public class BinaryTree {
 
     public void printTreeDepthFirst() {
 
-        if(rootNode == null){
+        if (rootNode == null) {
             System.out.println("Tree is empty");
             return;
         }
@@ -53,11 +54,11 @@ public class BinaryTree {
 
             System.out.println(current.getNodeId());
 
-            if(current.getRightNode() != null){
+            if (current.getRightNode() != null) {
                 stack.push(current.getRightNode());
             }
 
-            if(current.getLeftNode() != null){
+            if (current.getLeftNode() != null) {
                 stack.push(current.getLeftNode());
             }
         }
@@ -71,33 +72,33 @@ public class BinaryTree {
             BinaryTreeNode current = list.getFirst();
             list.removeFirst();
 
-            if(current.getNodeId().equals(nodeId)) {
+            if (current.getNodeId().equals(nodeId)) {
                 rootNode = null;
                 System.out.println("Full tree Deleted.");
                 return;
             }
 
-            if(current.getLeftNode() != null){
-                if(current.getLeftNode().getNodeId().equals(nodeId)) {
+            if (current.getLeftNode() != null) {
+                if (current.getLeftNode().getNodeId().equals(nodeId)) {
                     current.setLeftNode(null);
                     System.out.println("Subtree Deleted.");
                     return;
                 }
             }
 
-            if(current.getRightNode() != null) {
-                if(current.getRightNode().getNodeId().equals(nodeId)) {
+            if (current.getRightNode() != null) {
+                if (current.getRightNode().getNodeId().equals(nodeId)) {
                     current.setRightNode(null);
                     System.out.println("Subtree Deleted.");
                     return;
                 }
             }
 
-            if(current.getLeftNode() != null){
+            if (current.getLeftNode() != null) {
                 list.add(current.getLeftNode());
             }
 
-            if(current.getRightNode() != null){
+            if (current.getRightNode() != null) {
                 list.add(current.getRightNode());
             }
         }
@@ -112,20 +113,16 @@ public class BinaryTree {
             BinaryTreeNode current = list.getFirst();
             list.removeFirst();
 
-
-
-            if(current.getLeftNode() != null){
+            if (current.getLeftNode() != null) {
                 list.add(current.getLeftNode());
-            }
-            else {
+            } else {
                 current.setLeftNode(node);
                 return;
             }
 
-            if(current.getRightNode() != null){
+            if (current.getRightNode() != null) {
                 list.add(current.getRightNode());
-            }
-            else {
+            } else {
                 current.setRightNode(node);
                 return;
             }

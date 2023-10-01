@@ -1,9 +1,9 @@
 package org.example.nodes;
 
 public class BinaryTreeNode {
-    Integer nodeId;
-    BinaryTreeNode leftNode;
-    BinaryTreeNode rightNode;
+    private Integer nodeId;
+    private BinaryTreeNode leftNode;
+    private BinaryTreeNode rightNode;
 
     public BinaryTreeNode(Integer nodeId, BinaryTreeNode leftNode, BinaryTreeNode rightNode) {
         this.nodeId = nodeId;
